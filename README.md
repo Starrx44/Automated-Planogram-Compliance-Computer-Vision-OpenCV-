@@ -78,3 +78,23 @@ The application follows a continuous processing loop:
  │  Video Feed │ → │  YOLOv8 Model │ → │ Object Counting │ → │  Tkinter GUI  │ → │  Stock Alerts   │
  │ (OpenCV cv2)│   │  (inference)  │   │ (per class tally)│ │ (video + list)│   │ (color coding)  │
  └─────────────┘   └───────────────┘   └────────────────┘   └───────────────┘   └────────────────┘
+
+## 🎯 Training a Custom Model
+
+Out of the box, the app runs on YOLOv8's COCO-pretrained weights. To detect specific SKUs for production planogram compliance:
+
+1. **Label in Roboflow:** Export your custom product dataset in YOLOv8 format (`data.yaml`).
+2. **Fine-tune the model:**
+   ```bash
+   python train_custom_model.py --data path/to/data.yaml
+3. **Deploy custom weights:** Point the app at your new checkpoint:
+   ```bash
+   python SmartRetailShelfMonitoringSystem.py --model runs/detect/shelf_custom/weights/best.pt
+## 📄 License
+
+This project is licensed under the **MIT License**. You are free to use, modify, and distribute this software.
+
+## 👨‍💻 Author
+
+**Saswat Mishra**
+- 🐙 GitHub: [@Starrx44](https://github.com/Starrx44)
