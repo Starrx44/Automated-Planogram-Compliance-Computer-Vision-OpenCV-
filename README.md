@@ -73,11 +73,11 @@ This project automates shelf monitoring using deep learning:
 
 The application follows a continuous processing loop:
 
-```text
- ┌─────────────┐   ┌───────────────┐   ┌────────────────┐   ┌───────────────┐   ┌────────────────┐
- │  Video Feed │ → │  YOLOv8 Model │ → │ Object Counting │ → │  Tkinter GUI  │ → │  Stock Alerts   │
- │ (OpenCV cv2)│   │  (inference)  │   │ (per class tally)│ │ (video + list)│   │ (color coding)  │
- └─────────────┘   └───────────────┘   └────────────────┘   └───────────────┘   └────────────────┘
+
+ ┌─────────────┐   ┌───────────────┐    ┌────────────────┐    ┌───────────────┐    ┌────────────────┐
+ │  Video Feed │ → │  YOLOv8 Model │ → │ Object Counting  │ → │  Tkinter GUI  │ →  │  Stock Alerts  │
+ │ (OpenCV cv2)│   │  (inference)  │   │ (per class tally)│   │ (video + list)│    │ (color coding) │
+ └─────────────┘   └───────────────┘    └────────────────┘    └───────────────┘    └────────────────┘
 
 ## 🎯 Training a Custom Model
 
